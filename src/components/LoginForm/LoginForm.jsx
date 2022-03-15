@@ -25,7 +25,7 @@ export default function LoginForm() {
         <input className={errors.password && 'input--error'} type="password" id='password' {...register("password", { required: true })} />
         {errors.password && <InputError />}
       </section>
-      <section>
+      <section className='loginUser__button'>
         <Button value="Acceder a Weplot" />
       </section>
       <div className='loginUser__link'>
