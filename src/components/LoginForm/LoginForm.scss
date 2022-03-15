@@ -1,0 +1,33 @@
+@import "../../scss/index.scss";
+
+.loginUser{
+  display: flex;
+  flex-direction: column;
+  gap: 1.3em;
+  align-items: center;
+
+  input{
+    border-radius: $boder-radius;
+    border: 1px solid $font-gray;
+    padding: .3em .2em;
+  }
+
+  section{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &__link{
+    display: flex;
+    gap: 1em;
+    a{
+      color: $color-purple;
+      text-decoration: none;
+      transition: $transition;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+}
