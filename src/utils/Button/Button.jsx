@@ -19,7 +19,7 @@ export default function Button(props) {
 
 
   return (
-    <button className={secundary ? `${className} secundary-button` : `${className} primary-button`} onClick={onClick} disabled={disabled}>
+    <button className={secundary ? `${className} shadow rounded secundary-button` : `${className} shadow rounded primary-button`} onClick={onClick} disabled={disabled}>
       {icon ? <span><FontAwesomeIcon icon={icon} /></span> : null}
       {value ? <span>{value}</span> : null}
     </button>

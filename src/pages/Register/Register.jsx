@@ -13,8 +13,8 @@ export default function Register() {
         <h1>Regístrate a <b>WePlot</b></h1>
       </header>
       <div className='register__buttons'>
-        <Button className='shadow bg-warning bg-opacity-25 rounded' secundary value="Registro con Google" icon={faGoogle} />
-        <Button className='shadow bg-body rounded' secundary value="Registro con Facebook" icon={faFacebook} />
+        <Button className='bg-warning bg-opacity-25' secundary value="Registro con Google" icon={faGoogle} />
+        <Button className='bg-body' secundary value="Registro con Facebook" icon={faFacebook} />
       </div>
       <span className='register__spamtext'>O diligencia el formulario</span>
       <form action="">

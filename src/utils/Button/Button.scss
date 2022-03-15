@@ -15,7 +15,7 @@
   display: flex;
   justify-content: center;
   gap: .5em;
- 
+  color: $color-gray;
 
   span{
     margin: 0;
@@ -28,6 +28,9 @@
 
   &:active {
     transform: scale(.85);
+  }
+  &:hover{
+    opacity: .85;
   }
 
 }
@@ -59,6 +62,9 @@
 
   &:active {
     transform: scale(.85);
+  }
+  &:hover{
+    opacity: .85;
   }
 
 }
