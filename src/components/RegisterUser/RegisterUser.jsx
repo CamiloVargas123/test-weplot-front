@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import Button from '../../utils/Button/Button'
 import { useForm } from 'react-hook-form'
 import InputError from '../../utils/InputError/InputError'
+import captcha from '../../asset/img/captcha.png'
+
 import './RegisterUser.scss'
 
 export default function RegisterUser() {
@@ -43,27 +45,27 @@ export default function RegisterUser() {
       <div>
         <section>
           <label htmlFor="email">Pais</label>
-          <input type="text" id='city' />
+          <input type="text" id='city' {...register("city")} />
         </section>
       </div>
       <div>
         <section>
           <label htmlFor="question1">Comida favorita</label>
-          <input type="text" id='question1' />
+          <input type="text" id='question1' {...register("question1")} />
         </section>
         <section>
           <label htmlFor="question2">Artista favorito</label>
-          <input type="text" id='question2' />
+          <input type="text" id='question2' {...register("question2")} />
         </section>
       </div>
       <div>
         <section>
           <label htmlFor="question3">Lugar favorito</label>
-          <input type="text" id='question3' />
+          <input type="text" id='question3' {...register("question3")} />
         </section>
         <section>
           <label htmlFor="question4">Color favorito</label>
-          <input type="text" id='question4' />
+          <input type="text" id='question4' {...register("question4")} />
         </section>
       </div>
       <div>
@@ -81,8 +83,8 @@ export default function RegisterUser() {
       <div>
         <h2>Foto de perfil</h2>
       </div>
-      <div>
-        Captchat
+      <div className='registeruser__captcha'>
+        <img src={captcha} alt="captcha" />
       </div>
       <div>
         <Button value="Unirme a Weplot" />
