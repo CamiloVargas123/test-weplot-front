@@ -8,8 +8,7 @@ export default function RegisterUser() {
 
   const { register, handleSubmit, formState: { errors } } = useForm()
 
-  const onSubmit = (e, data) => {
-    console.log(e)
+  const onSubmit = (data) => {
     console.log(data)
   }
 
@@ -23,7 +22,7 @@ export default function RegisterUser() {
         </section>
         <section>
           <label htmlFor="lname">Apellido</label>
-          <input type="text" id='lname' {...register("fname")}  />
+          <input type="text" id='lname' {...register("lname")}  />
         </section>
       </div>
       <div>
