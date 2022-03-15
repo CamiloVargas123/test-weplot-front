@@ -1,18 +1,8 @@
-import { useState } from 'react'
-
-import './App.css'
+import Router from './routes/routes'
 
 function App() {
-
   return (
-    <div className='row'>
-      <div className='col'>
-        imagen
-      </div>
-      <div className='col'>
-        form
-      </div>
-    </div>
+    <Router />
   )
 }
 
