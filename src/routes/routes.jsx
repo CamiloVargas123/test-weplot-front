@@ -4,7 +4,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import LoginOrRegister from '../Layout/LoginOrRegister/LoginOrRegister'
 
 //pages
-import Login from '../pages/Login/Login'
+import Login from '../pages/Register/Register'
 
 
 export default function Router() {
