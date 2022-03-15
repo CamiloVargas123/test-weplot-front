@@ -1,0 +1,64 @@
+@import '../../scss/index.scss';
+
+.primary-button {
+  font-family: $defaultFontFamily;
+  font-size: 1em;
+  font-weight: 500;
+  width: max-content;
+  border-radius: $boder-radius;
+  border: none;
+  padding: 0.2em .5em;
+  cursor: pointer;
+  background-color: $color-purple;
+  transition: $transition;
+  line-height: inherit;
+  display: flex;
+  justify-content: center;
+  gap: .5em;
+ 
+
+  span{
+    margin: 0;
+    color: inherit;
+  }
+  
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &:active {
+    transform: scale(.85);
+  }
+
+}
+
+.secundary-button {
+  font-family: $defaultFontFamily;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: 500;
+  color: $font-dark;
+  padding: 0.2em .5em;
+  border-radius: $boder-radius;
+  transition: $transition;
+  line-height: inherit;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  justify-content: center;
+  gap: .5em;
+
+  span{
+    margin: 0;
+    color: inherit;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &:active {
+    transform: scale(.85);
+  }
+
+}
