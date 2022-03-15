@@ -1,31 +1,44 @@
 import { Link } from 'react-router-dom'
 import Button from '../../utils/Button/Button'
+import { useForm } from 'react-hook-form'
+import InputError from '../../utils/InputError/InputError'
 import './RegisterUser.scss'
 
 export default function RegisterUser() {
+
+  const { register, handleSubmit, formState: { errors } } = useForm()
+
+  const onSubmit = (e, data) => {
+    console.log(e)
+    console.log(data)
+  }
+
   return (
-    <form className='registeruser'>
+    <form className='registeruser' onSubmit={handleSubmit(onSubmit)}>
       <div>
         <section>
           <label htmlFor="fname">Nombre*</label>
-          <input type="text" id='fname' />
+          <input className={errors.fname && 'input--error'} type="text" id='fname'{...register("fname", {required: true})} />
+          {errors.fname && <InputError />}
         </section>
         <section>
           <label htmlFor="lname">Apellido</label>
-          <input type="text" id='lname' />
+          <input type="text" id='lname' {...register("fname")}  />
         </section>
       </div>
       <div>
         <section>
           <label htmlFor="email">Email*</label>
-          <input type="email" id='email' />
+          <input className={errors.email && 'input--error'} type="email" id='email' {...register("email", {required: true})} />
+          {errors.email && <InputError />}
         </section>
         <section className='registeruser__tel'>
           <label htmlFor="prefix">Telefono*</label>
           <div>
-            <input type="tel" id='prefix' />
-            <input type="tel" id='tel' />
+            <input className={(errors.tel || errors.prefix) && 'input--error'} type="tel" id='prefix' {...register("prefix", {required: true})} />
+            <input className={(errors.tel || errors.prefix) && 'input--error'} type="tel" id='tel' {...register("tel", {required: true})} />
           </div>
+          {(errors.tel || errors.prefix)  && <InputError />}
         </section>
       </div>
       <div>
@@ -57,11 +70,13 @@ export default function RegisterUser() {
       <div>
         <section>
           <label htmlFor="password">Contraseña*</label>
-          <input type="password" id='password' />
+          <input className={errors.password && 'input--error'} type="password" id='password' {...register("password", {required: true})} />
+          {errors.password && <InputError />}
         </section>
         <section>
           <label htmlFor="repeatPassword">Confirmar contraseña*</label>
-          <input type="password" id='repeatPassword' />
+          <input className={errors.repeatPassword && 'input--error'} type="password" id='repeatPassword' {...register("repeatPassword", {required: true})} />
+          {errors.password && <InputError />}
         </section>
       </div>
       <div>
