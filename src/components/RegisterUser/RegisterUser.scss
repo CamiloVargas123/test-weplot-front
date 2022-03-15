@@ -2,12 +2,13 @@
 
 .registeruser{
   display: grid;
-  gap: 1.1em;
+  gap: 1.3em;
   width: min-content;
 
   input{
     border-radius: $boder-radius;
     border: 1px solid $font-gray;
+    padding: .3em .2em;
   }
 
   div{
@@ -17,6 +18,7 @@
     section{
       display: grid;
       position: relative;
+      gap: .1em;
     }
   }
 
@@ -45,6 +47,44 @@
       transition: $transition;
       &:hover{
         text-decoration: underline;
+      }
+    }
+  }
+  &__avatar{
+    gap: 1em !important;
+    
+    input{
+      display: none;
+    }
+    &--icon{
+      cursor: pointer;
+      height: 100%;
+      div{
+        border: 1px dashed $font-gray;
+        border-radius: $boder-radius;
+        padding: .5em;
+        svg{
+          color: $color-purple;
+          font-size: 2em;
+        }
+      }
+    }
+    &--info{
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 100%;
+      div{
+        display: flex;
+        align-items: center;
+        gap: 1em !important;
+        p{
+          font-weight: 600;
+        }
+        svg{
+          color: $color-purple;
+        }
       }
     }
   }

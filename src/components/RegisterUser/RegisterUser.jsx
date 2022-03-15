@@ -3,6 +3,8 @@ import Button from '../../utils/Button/Button'
 import { useForm } from 'react-hook-form'
 import InputError from '../../utils/InputError/InputError'
 import captcha from '../../asset/img/captcha.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUpload, faCircleUser } from '@fortawesome/free-solid-svg-icons'
 
 import './RegisterUser.scss'
 
@@ -80,8 +82,20 @@ export default function RegisterUser() {
           {errors.password && <InputError />}
         </section>
       </div>
-      <div>
-        <h2>Foto de perfil</h2>
+      <div className='registeruser__avatar'>
+        <input type="file" id='avatar' {...register("avatar")} />
+        <label className='registeruser__avatar--icon' htmlFor="avatar">
+          <div>
+            <FontAwesomeIcon icon={faCircleUser} />
+          </div>
+        </label>
+        <label className='registeruser__avatar--info' htmlFor="avatar">
+          <div>
+            <p>Foto de perfil</p>
+            <FontAwesomeIcon icon={faUpload} />
+          </div>
+          <span>jpg o PDF de máximo 10 MB</span>
+        </label>
       </div>
       <div className='registeruser__captcha'>
         <img src={captcha} alt="captcha" />
