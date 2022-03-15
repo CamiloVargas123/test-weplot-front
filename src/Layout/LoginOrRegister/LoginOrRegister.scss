@@ -5,21 +5,54 @@
   display: grid;
   grid-template-columns: .8fr 1fr;
   
-  div{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-  }
 
   &__img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: $color-gray;
     img{
       width: 100%;
     }
   }
 
-  &__form{
+  &__content{
     padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    header{
+      position: relative;
+      background-color: white;
+      margin-left: 4em;
+      width: 100%;
+      h1{
+        margin: 0;
+        font-weight: 600;
+        font-size: 3em;
+      }
+      b{
+        color: $color-purple;
+      }
+    }
+    &__buttons {
+      display: flex;
+      gap: 1em;
+      padding-top: 1em;
+    }
+    &__spamtext{
+      color: $font-gray;
+    }
   }
+}
+
+
+.svg-ellipse{
+  width: 100px;
+  position: absolute;
+  left: -35px;
+  top: -35px;
+  z-index: -1;
 }

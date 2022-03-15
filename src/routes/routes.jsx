@@ -1,10 +1,13 @@
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 
+//component
+import LoginForm from '../components/LoginForm/LoginForm'
+import RegisterForm from '../components/RegisterForm/RegisterForm'
+
 //layout
 import LoginOrRegister from '../Layout/LoginOrRegister/LoginOrRegister'
 
-//pages
-import Register from '../pages/Register/Register'
+
 
 
 export default function Router() {
@@ -13,8 +16,8 @@ export default function Router() {
       <Routes>
 
         <Route path="/" element={<LoginOrRegister />}>
-          <Route index element={<Register />} />
-          <Route path='login' element={<p>login</p>} />
+          <Route index element={<RegisterForm />} />
+          <Route path='login' element={<LoginForm />} />
         </Route>
 
       </Routes>

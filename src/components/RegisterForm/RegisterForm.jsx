@@ -6,7 +6,7 @@ import captcha from '../../asset/img/captcha.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUpload, faCircleUser } from '@fortawesome/free-solid-svg-icons'
 
-import './RegisterUser.scss'
+import './RegisterForm.scss'
 
 export default function RegisterUser() {
 
