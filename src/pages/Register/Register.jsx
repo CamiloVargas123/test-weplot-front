@@ -17,9 +17,7 @@ export default function Register() {
         <Button className='bg-body' secundary value="Registro con Facebook" icon={faFacebook} />
       </div>
       <span className='register__spamtext'>O diligencia el formulario</span>
-      <form action="">
-        <RegisterUser />
-      </form>
+      <RegisterUser />
     </div>
   )
 }
