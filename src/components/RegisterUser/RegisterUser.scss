@@ -1,0 +1,50 @@
+@import "../../scss/index.scss";
+
+.registeruser{
+  display: grid;
+  gap: 1em;
+  width: min-content;
+
+  input{
+    border-radius: $boder-radius;
+    border: 1px solid $font-gray;
+  }
+
+  div{
+    display: flex;
+    gap: 2em;
+    justify-content: start;
+    section{
+      display: grid;
+    }
+  }
+
+  &__tel{
+    div{
+      display: flex;
+      gap: 1em;
+      justify-content: start;
+      width: 100%;
+      input{
+        &:first-of-type{
+          width: 40px;
+        }
+        &:last-of-type{
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__link{
+    gap: 1em !important;
+    a{
+      color: $color-purple;
+      text-decoration: none;
+      transition: $transition;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+}

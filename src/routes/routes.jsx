@@ -4,7 +4,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import LoginOrRegister from '../Layout/LoginOrRegister/LoginOrRegister'
 
 //pages
-import Login from '../pages/Register/Register'
+import Register from '../pages/Register/Register'
 
 
 export default function Router() {
@@ -13,8 +13,8 @@ export default function Router() {
       <Routes>
 
         <Route path="/" element={<LoginOrRegister />}>
-          <Route index element={<Login />} />
-          <Route path='register' element={<p>Register</p>} />
+          <Route index element={<Register />} />
+          <Route path='login' element={<p>login</p>} />
         </Route>
 
       </Routes>
