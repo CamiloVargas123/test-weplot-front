@@ -1,6 +1,6 @@
 @import "../../scss/index.scss";
 
-.login{
+.register{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,9 +9,11 @@
     position: relative;
     background-color: white;
     margin-left: 4em;
+    width: 100%;
     h1{
       margin: 0;
       font-weight: 600;
+      font-size: 3em;
     }
     b{
       color: $color-purple;
@@ -29,7 +31,7 @@
 .svg-ellipse{
   width: 100px;
   position: absolute;
-  left: -40px;
-  top: -40px;
+  left: -35px;
+  top: -35px;
   z-index: -1;
 }
