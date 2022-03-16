@@ -36,3 +36,15 @@ export function signInApi(data) {
     return e.message;
   })
 }
+
+export function getAllUsers(){
+  const url = `${BASE_PATH}/${API_VERSION}/users`;
+
+  return fetch(url).then(response => {
+      return response.json();
+  }).then(result => {
+      return result;
+  }).catch(err => {
+      return err.message;
+  })
+}
