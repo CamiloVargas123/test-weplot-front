@@ -16,12 +16,7 @@ import './RegisterForm.scss'
 
 export default function RegisterUser() {
   const [isLoading, setIsLoading] = useState(false)
-  const [dataQuestion, setDataQuestion] = useState({
-    question1: "Comida favorita",
-    question2: "Artista favorito",
-    question3: "Lugar favorito",
-    question4: "Color favorito"
-  })
+  const [dataQuestion, setDataQuestion] = useState(null)
   const navigate = useNavigate()
 
   const { register, handleSubmit, formState: { errors } } = useForm()
@@ -86,21 +81,21 @@ export default function RegisterUser() {
       </div>
       <div>
         <section>
-          <label htmlFor="question1">{dataQuestion && dataQuestion.question1}</label>
+          <label htmlFor="question1">{dataQuestion ? dataQuestion.question1 : "Comida favorita"}</label>
           <input type="text" id='question1' {...register("question1")} />
         </section>
         <section>
-          <label htmlFor="question2">{dataQuestion && dataQuestion.question2}</label>
+          <label htmlFor="question2">{dataQuestion ? dataQuestion.question2 : "Artista favorito"}</label>
           <input type="text" id='question2' {...register("question2")} />
         </section>
       </div>
       <div>
         <section>
-          <label htmlFor="question3">{dataQuestion && dataQuestion.question3}</label>
+          <label htmlFor="question3">{dataQuestion ? dataQuestion.question3 : "Lugar favorito"}</label>
           <input type="text" id='question3' {...register("question3")} />
         </section>
         <section>
-          <label htmlFor="question4">{dataQuestion && dataQuestion.question4}</label>
+          <label htmlFor="question4">{dataQuestion ? dataQuestion.question4 : "Color favorito"}</label>
           <input type="text" id='question4' {...register("question4")} />
         </section>
       </div>
