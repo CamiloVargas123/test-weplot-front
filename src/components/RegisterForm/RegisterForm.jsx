@@ -26,7 +26,7 @@ export default function RegisterUser() {
 
   const onSubmit = async (data) => {
     setIsLoading(true)
-    const result = await signUpApi(formatData(data, dataQuestion))
+    const result = await signUpApi(await formatData(data, dataQuestion))
     if (!result.ok) return Swal.fire({ title: result.message, icon: "error" }), setIsLoading(false)
     return Swal.fire({ title: result.message, icon: "success" }), setIsLoading(false)
   }

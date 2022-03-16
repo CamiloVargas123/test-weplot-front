@@ -1,5 +1,17 @@
+const convertBase64 = (file) => {
+  return new Promise((resolve, reject) => {
+    const fileReader = new FileReader()
+    fileReader.readAsDataURL(file)
+    fileReader.onload = () => {
+      resolve(fileReader.result)
+    }
+    fileReader.onerror = (err) => {
+      reject(err)
+    }
+  })
+}
 
-export function formatData(data, dataQuestion) {
+export async function formatData(data, dataQuestion) {
   const question = [{
     question: dataQuestion.question1,
     answer: data.question1
@@ -18,5 +30,6 @@ export function formatData(data, dataQuestion) {
   delete data.question3
   delete data.question4
   data.question = question
+  data.avatar = await convertBase64(data.avatar[0])
   return data
 }
