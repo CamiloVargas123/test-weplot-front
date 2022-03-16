@@ -117,7 +117,7 @@ export default function RegisterUser() {
         </section>
       </div>
       <div className='registeruser__avatar'>
-        <input type="file" id='avatar' {...register("avatar")} />
+        <input type="file" id='avatar' accept='image/*' {...register("avatar")} />
         <label className='registeruser__avatar--icon' htmlFor="avatar">
           <div>
             <FontAwesomeIcon icon={faCircleUser} />
