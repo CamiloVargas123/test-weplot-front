@@ -3,13 +3,14 @@ import { useForm } from "react-hook-form"
 import { getQuestionApi, updateQuestionApi } from '../../api/questions'
 import Button from '../../utils/Button/Button'
 import Swal from 'sweetalert2'
+import { useAuth } from '../../provider/AuthProvider'
 
 import './ChangeQuestionsForm.scss'
 
 export default function ChangeQuestionsForm() {
   const [dataQuestion, setDataQuestion] = useState(null)
   const { register, handleSubmit, formState: { errors } } = useForm()
-
+  const { setToken } = useAuth()
   useEffect(() => {
     getQuestion()
   }, [])
@@ -21,8 +22,8 @@ export default function ChangeQuestionsForm() {
 
   const onSubmit = async (data) => {
     updateQuestionApi(data).then(response => {
-      return Swal.fire({icon: "success", text: "Preguntas actualizadas"})
-    }).catch(err => Swal.fire({icon: "warning", text: "Error, Intenta de nuevo"}))
+      return Swal.fire({ icon: "success", text: "Preguntas actualizadas" })
+    }).catch(err => Swal.fire({ icon: "warning", text: "Error, Intenta de nuevo" }))
   }
 
   return (
@@ -45,7 +46,10 @@ export default function ChangeQuestionsForm() {
           <input type="text" name="q4" id="q4" {...register("question4")} defaultValue={dataQuestion && dataQuestion.question4} />
         </section>
       </div>
-      <Button value="Actualizar preguntas" />
+      <div className='changeQuestions__btn'>
+        <Button value="Actualizar preguntas" />
+        <Button secundary value="Cerrar sesión" onClick={() => setToken(false)} />
+      </div>
     </form>
   )
 }
