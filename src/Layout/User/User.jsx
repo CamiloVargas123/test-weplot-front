@@ -1,12 +1,14 @@
 
 import { useAuth } from '../../provider/AuthProvider'
 import img from '../../asset/img/img1.png'
+import { Navigate } from 'react-router-dom'
+import Button from '../../utils/Button/Button'
 
 import './User.scss'
 
 export default function User() {
-  const { userData } = useAuth()
-  
+  const { userData, setToken } = useAuth()
+  if(!userData) return <Navigate to={"/login"} />
   return (
     <div className='user'>
       <header>
@@ -36,6 +38,7 @@ export default function User() {
             </tr>
           </tbody>
         </table>
+        <Button value="Cerrar sesión" onClick={() => setToken(false)} />
       </div>
     </div>
   )

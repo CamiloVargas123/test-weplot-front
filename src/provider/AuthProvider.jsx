@@ -18,6 +18,7 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     if(token) return setUser(jwtDecode(token))
+    if(!token) return setUser(false)
   }, [token]);
 
   const value = {
