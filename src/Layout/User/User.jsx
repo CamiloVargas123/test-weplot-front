@@ -31,10 +31,12 @@ export default function User() {
               <th className='user__content__table--img' scope="row">
                 <img src={userData.avatar} alt="avatar" />
               </th>
-              <td className='user__content__table--name'>{userData.fname +' '+ userData.lname}</td>
-              <td>{userData.email}</td>
-              <td>{userData.tel}</td>
-              {userData.question.map((item, idx) => <td key={idx}>{item.answer}</td>)}
+              <th className='user__content__table--name'>
+                <p>{userData.fname +' '+ userData.lname}</p>
+              </th>
+              <th>{userData.email}</th>
+              <th>{userData.tel}</th>
+              {userData.question.map((item, idx) => <th key={idx}>{item.answer}</th>)}
             </tr>
           </tbody>
         </table>
