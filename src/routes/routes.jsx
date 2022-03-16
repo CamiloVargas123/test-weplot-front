@@ -1,5 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
+//type of router
+import PublicRouter from './PublicRouter'
+
 //component
 import LoginForm from '../components/LoginForm/LoginForm'
 import RegisterForm from '../components/RegisterForm/RegisterForm'
@@ -16,7 +19,7 @@ export default function Router() {
     <BrowserRouter>
       <Routes>
 
-        <Route path="/" element={<LoginOrRegister />}>
+        <Route path="/" element={<PublicRouter><LoginOrRegister /></PublicRouter>}>
           <Route index element={<RegisterForm />} />
           <Route path='login' element={<LoginForm />} />
         </Route>
