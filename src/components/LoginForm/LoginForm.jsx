@@ -2,15 +2,26 @@ import { Link } from 'react-router-dom'
 import Button from '../../utils/Button/Button'
 import { useForm } from 'react-hook-form'
 import InputError from '../../utils/InputError/InputError'
+import { signInApi } from '../../api/user'
+import Swal from 'sweetalert2'
+import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../../provider/AuthProvider'
 
 import './LoginForm.scss'
 
 export default function LoginForm() {
-
+  const navigate = useNavigate()
   const { register, handleSubmit, formState: { errors } } = useForm()
+  const { setToken } = useAuth()
 
-  const onSubmit = (data) => {
-    console.log(data)
+  const onSubmit = async (data) => {
+    const result = await signInApi(data);
+
+    if (result.message) return Swal.fire({icon: "error", text: result.message})
+    return Swal.fire({icon: "success", text: "Acceder"}).then(() => {
+      setToken(result.accessToken)
+      navigate('/user')
+    })
   }
 
   return (
