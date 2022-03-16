@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 //type of router
 import PublicRouter from './PublicRouter'
+import PrivateRouter from './PrivateRouter'
 
 //component
 import LoginForm from '../components/LoginForm/LoginForm'
@@ -24,7 +25,7 @@ export default function Router() {
           <Route path='login' element={<LoginForm />} />
         </Route>
 
-        <Route path="/user" element={<User/>} />
+        <Route path="/user" element={<PrivateRouter><User/></PrivateRouter>} />
 
       </Routes>
     </BrowserRouter>

@@ -8,7 +8,7 @@ import './User.scss'
 
 export default function User() {
   const { userData, setToken } = useAuth()
-  if(!userData) return <Navigate to={"/login"} />
+  if(userData.role === 'admin') return <Navigate to={"/admin"} />
   return (
     <div className='user'>
       <header>
@@ -16,7 +16,7 @@ export default function User() {
       </header>
       <div className='user__content'>
         <h1>Información de mi cuenta</h1>
-        <table class="user__content__table table">
+        <table className="user__content__table table">
           <thead>
             <tr>
               <th scope="col">Imagen</th>
