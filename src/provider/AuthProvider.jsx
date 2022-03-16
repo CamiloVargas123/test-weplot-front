@@ -9,7 +9,7 @@ export function useAuth() {
 
 
 export function AuthProvider({ children }) {
-  const [user, setUser] = useState(null);
+  const [userData, setUser] = useState(null);
   const [token, setToken] = useState(false);
 
   const logOut = () => {
@@ -21,7 +21,7 @@ export function AuthProvider({ children }) {
   }, [token]);
 
   const value = {
-    user,
+    userData,
     setToken,
     logOut
   }

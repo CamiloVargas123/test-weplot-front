@@ -1,0 +1,42 @@
+@import "../../scss/index.scss";
+
+.user {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  header {
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    background-color: $color-gray;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  &__content {
+    height: 70vh;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+      font-size: 2em;
+    }
+
+    &__table {
+      margin-top: 2em;
+
+      &--img {
+        img {
+          width: 100px;
+          height: auto;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
