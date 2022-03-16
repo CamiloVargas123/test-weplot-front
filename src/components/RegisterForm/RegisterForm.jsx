@@ -10,6 +10,7 @@ import { signUpApi } from '../../api/user'
 import Swal from 'sweetalert2'
 import { formatData } from '../../utils/formatDataRegister'
 import { getQuestionApi } from '../../api/questions'
+import { useNavigate } from 'react-router-dom'
 
 import './RegisterForm.scss'
 
@@ -21,6 +22,7 @@ export default function RegisterUser() {
     question3: "Lugar favorito",
     question4: "Color favorito"
   })
+  const navigate = useNavigate()
 
   const { register, handleSubmit, formState: { errors } } = useForm()
 
@@ -28,7 +30,10 @@ export default function RegisterUser() {
     setIsLoading(true)
     const result = await signUpApi(await formatData(data, dataQuestion))
     if (!result.ok) return Swal.fire({ title: result.message, icon: "error" }), setIsLoading(false)
-    return Swal.fire({ title: result.message, icon: "success" }), setIsLoading(false)
+    return Swal.fire({ title: result.message, icon: "success" }).then(() => {
+      setIsLoading(false)
+      navigate('/user')
+    })
   }
 
   useEffect(() => {
