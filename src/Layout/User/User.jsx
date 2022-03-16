@@ -31,7 +31,7 @@ export default function User() {
               <th className='user__content__table--img' scope="row">
                 <img src={userData.avatar} alt="avatar" />
               </th>
-              <td>{userData.fname + userData.lname}</td>
+              <td className='user__content__table--name'>{userData.fname +' '+ userData.lname}</td>
               <td>{userData.email}</td>
               <td>{userData.tel}</td>
               {userData.question.map((item, idx) => <td key={idx}>{item.answer}</td>)}

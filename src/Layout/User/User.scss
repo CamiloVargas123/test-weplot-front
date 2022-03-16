@@ -38,6 +38,9 @@
           object-fit: cover;
         }
       }
+      &--name{
+        text-transform: capitalize;
+      }
     }
   }
 }
