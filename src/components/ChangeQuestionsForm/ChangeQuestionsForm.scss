@@ -1,0 +1,28 @@
+@import "../../scss/index.scss";
+
+.changeQuestions{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2em;
+  gap: 2em;
+
+  input{
+    border-radius: $boder-radius;
+    border: 1px solid $font-gray;
+    padding: .3em .2em;
+  }
+
+  &__inputs{
+    display: flex;
+    gap: 1em;
+
+    section{
+      display: flex;
+      flex-direction: column;
+      gap: .3em;
+    }
+  }
+
+}
