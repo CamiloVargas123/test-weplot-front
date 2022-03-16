@@ -6,8 +6,9 @@ export function getQuestionApi() {
   return fetch(url).then(response => {
     return response.json();
   }).then(result => {
-    return result;
+    if(result) return {ok: true, result};
+    return {ok: false, message: result.message};
   }).catch(err => {
-    return err.message;
+    return {ok: false, message: err.message};
   })
 }
